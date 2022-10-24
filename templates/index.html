@@ -23,7 +23,7 @@
           {% endif %}
           {% if not current_user.is_authenticated %}
           <li class="nav-item">
-            <a class="btn btn-outline-info my-2 my-sm-0" href="{{ url_for('auth.login') }}" >Login</a>
+            <a class="btn btn-outline-info my-2 my-sm-0 mr-2" href="{{ url_for('auth.login') }}" >Login</a>
           </li>
           <li class="nav-item">
             <a class="btn btn-outline-info my-2 my-sm-0" href="{{ url_for('auth.signup') }}" >Sign up</a>

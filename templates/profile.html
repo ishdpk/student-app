@@ -24,8 +24,12 @@
         <a class="nav-link" href="{{ url_for('main.profile') }}" style="color:#2ea8bb ;">Home</a>
       {% endif %}
       {% if not current_user.is_authenticated %}
-        <a class="nav-link" href="{{ url_for('auth.login') }}" style="color:#2ea8bb ;">Login</a>
-        <a class="nav-link" href="{{ url_for('auth.signup') }}" style="color:#2ea8bb ;">Sign up</a>
+      <li class="nav-item">
+        <a class="btn btn-outline-info my-2 my-sm-0 mr-2" href="{{ url_for('auth.login') }}" >Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="btn btn-outline-info my-2 my-sm-0" href="{{ url_for('auth.signup') }}" >Sign up</a>
+      </li>
       {% endif %}
       {% if current_user.is_authenticated %}
         <a class="nav-link" href="{{ url_for('auth.reset') }}" style="color:#2ea8bb ;">Reset Password</a>
