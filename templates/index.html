@@ -15,7 +15,7 @@
 </head>
 <body >  
       <nav class="navbar navbar-dark bg-dark">
-        <a class="navbar-brand" href="index.html">Student App for Students</h1>
+        <a class="navbar-brand" href="{{ url_for('main.index') }}">Student App for Students</h1>
         <div class="container"></div>  
         <div class="nav justify-content-end">
           {% if current_user.is_authenticated %}
