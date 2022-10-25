@@ -13,33 +13,38 @@
   <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 
 </head>
-<body style="background-color:black ;">
-  <nav class="navbar">
-    <a class="navbar-brand" href="{{ url_for('main.index') }}">Student App for Students</h1>
-    <div class="container"></div>  
+<body>
+  <nav class="navbar navbar-dark bg-dark navbar navbar-expand-lg">
+    <a class="navbar-brand" href="{{ url_for('main.index') }}">KirbyConnect</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    {% if current_user.is_authenticated %}
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{{ url_for('main.profile') }}">Home</a>
+      </li>
+    </ul>
+    {% endif %}
     <div class="nav justify-content-end">
-
-        
-      {% if current_user.is_authenticated %}
-        <a class="btn btn-outline-info my-2 my-sm-0 mr-2" href="{{ url_for('main.profile') }}" style="color:#2ea8bb ;">Home</a>
-      {% endif %}
       {% if not current_user.is_authenticated %}
       <li class="nav-item">
-        <a class="btn btn-outline-info my-2 my-sm-0 mr-2" href="{{ url_for('auth.login') }}" >Login</a>
+        <a class="btn btn-outline-info my-2 my-sm-0" href="{{ url_for('auth.login') }}" >Login</a>
       </li>
       <li class="nav-item">
-        <a class="btn btn-outline-info my-2 my-sm-0" href="{{ url_for('auth.signup') }}" >Sign up</a>
+        <a class="btn btn-outline-info my-2 my-sm-0 " href="{{ url_for('auth.signup') }}" >Sign up</a>
       </li>
       {% endif %}
       {% if current_user.is_authenticated %}
-      <li class="nav-item">
-        <a class="btn btn-outline-info my-2 my-sm-0 mr-2" href="{{ url_for('auth.reset') }}" style="color:#2ea8bb ;">Reset Password</a>
-      </li>
-      <li class="nav-item">
-        <a class="btn btn-outline-info my-2 my-sm-0 mr-2" href="{{ url_for('auth.logout') }}" style="color:#2ea8bb ;">Logout</a>
-      </li>
+      <div class="nav-item">
+        <a class="btn btn-outline-info my-2 my-sm-0 mr-2" href="{{ url_for('auth.reset') }}">Reset Password</a>
+      </div>
+      <div class="nav-item">
+        <a class="btn btn-outline-info my-2 my-sm-0" href="{{ url_for('auth.logout') }}">Logout</a></div>
       {% endif %}
     </div>
+  </div>
   </nav>
 
     <div class="container-fluid"> 
