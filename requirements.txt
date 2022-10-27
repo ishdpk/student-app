@@ -16,6 +16,7 @@ Flask-Mail==0.9.1
 Flask-Migrate==2.5.3
 Flask-Session==0.3.2
 Flask-SQLAlchemy==2.4.1
+Flask-socketio
 idna==2.10
 importlib-metadata==1.6.0
 ipython==7.14.0

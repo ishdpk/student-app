@@ -14,7 +14,7 @@ def index():
 def profile():
     return render_template('profile.html', username=current_user.username)
 
-app = create_app() 
+app = create_app()
 if __name__ == '__main__':
     db.create_all(app=create_app())
     app.run(debug=True)
