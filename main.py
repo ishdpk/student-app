@@ -12,7 +12,7 @@ def index():
 @main.route('/home')
 @login_required
 def profile():
-    return render_template('profile.html', username=current_user.username)
+    return render_template('profile.html', username=current_user.username, email=current_user.email)
 
 app = create_app()
 if __name__ == '__main__':
